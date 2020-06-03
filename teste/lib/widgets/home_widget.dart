@@ -3,12 +3,7 @@ import 'amantesDaCozinha.dart';
 import 'bebidas.dart';
 import 'frutasEVegetais.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import 'package:carousel_pro/carousel_pro.dart';
-
 import 'layoutApp.dart';
-
-//import 'package:gradient_widgets/gradient_widgets.dart';
 
 class MyButton extends StatefulWidget {
   @override

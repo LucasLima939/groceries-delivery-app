@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="96c8ddfb-15dd-4762-be72-8dded8b0609c" name="Default Changelist" comment="" />
+    <list default="true" id="96c8ddfb-15dd-4762-be72-8dded8b0609c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/teste/lib/bloc.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/getListHtml.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/testando.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/testando.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/lib/widgets/amantesDaCozinha.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/widgets/amantesDaCozinha.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/lib/widgets/frutasEVegetais.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/widgets/frutasEVegetais.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/lib/widgets/home_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/widgets/home_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/lib/widgets/myWidgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/widgets/myWidgets.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/teste/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/teste/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="cb12d6fa" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -16,16 +29,21 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cLxSpzbtSTN4VYrOu9TkHSzdne" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../App-master-(lucas)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../App-master - Tudo de Bom" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -45,10 +63,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Dart Command Line App.testando.dart">
+  <component name="RunManager" selected="Flutter.getListHtml.dart">
     <configuration name="testando.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/testando.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/teste" />
+      <method v="2" />
+    </configuration>
+    <configuration name="getListHtml.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/getListHtml.dart" />
       <method v="2" />
     </configuration>
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
@@ -66,12 +88,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Dart Command Line App.testando.dart" />
       <item itemvalue="Flutter.main.dart" />
       <item itemvalue="TestNG.C:/Users/User/AndroidStudioProjects/App-master/teste/pubspec.yaml" />
-      <item itemvalue="Dart Command Line App.testando.dart" />
+      <item itemvalue="Flutter.getListHtml.dart" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.getListHtml.dart" />
         <item itemvalue="Dart Command Line App.testando.dart" />
         <item itemvalue="Flutter.main.dart" />
         <item itemvalue="TestNG.C:/Users/User/AndroidStudioProjects/App-master/teste/pubspec.yaml" />
@@ -91,9 +115,22 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
-      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/teste" />
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
