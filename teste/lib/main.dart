@@ -12,13 +12,14 @@ import 'package:teste/abas/finalizarCompras.dart';
 import 'package:teste/widgets/LayoutLista.dart';
 import 'package:teste/widgets/layoutApp.dart';
 import 'package:teste/widgets/myWidgets.dart';
-import 'abas/carrinhoCompras.dart';
 import 'abas/finalizarCompras.dart';
 import 'abas/cadastro.dart';
 import 'abas/compras_widget.dart';
 import 'abas/homePage.dart';
 import 'package:teste/abas/reset-password.dart';
 
+import 'carrinhoFinalizarCompras/geradorListaCarrinho.dart';
+import 'carrinhoFinalizarCompras/layoutCarrinho.dart';
 import 'widgets/layoutApp.dart';
 
 void main() => runApp(MyApp());
@@ -40,7 +41,9 @@ class MyApp extends StatelessWidget {
         'esqueciSenha': (BuildContext context) => ResetPasswordPage(),
         'paginaCompras': (BuildContext context) => Compras_Widget(),
         'paginaOfertas': (BuildContext context) => Cadastro(),
-        'paginaCarrinho': (BuildContext context) => LayoutCarrinho(),
+        'layoutCarrinho': (BuildContext context) => LayoutCarrinho(),
+        'geradorListaCarrinho': (BuildContext context) => GeradorListaCarrinho(),
+
       },
     );
   }

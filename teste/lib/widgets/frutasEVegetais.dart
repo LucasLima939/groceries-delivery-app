@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:gradient_widgets/gradient_widgets.dart';
-import 'package:teste/abas/compras_widget.dart';
 
 class FrutasEVegetais extends StatefulWidget {
   @override

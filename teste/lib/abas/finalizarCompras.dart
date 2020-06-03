@@ -241,7 +241,7 @@ class _PaginaCompraState extends State<PaginaCompra> {
     items.add(
       GestureDetector(
         onTap: () {
-          Navigator.of(context).pushNamed('paginaCarrinho');
+          Navigator.of(context).pushNamed('layoutCarrinho');
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),

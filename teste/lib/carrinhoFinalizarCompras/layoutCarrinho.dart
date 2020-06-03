@@ -1,18 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:teste/back/geradorListaCarrinho.dart';
 import 'package:teste/widgets/myWidgets.dart';
+import 'geradorListaCarrinho.dart';
 
 
 
 class LayoutCarrinho extends StatelessWidget {
 
-  static String tag = 'layout-lista';
-
   @override
   Widget build(BuildContext context) {
 
-    final content = ListaPedidos();
+    final content = GeradorListaCarrinho();
 
     return _Layout.getContent(context, content);
 
@@ -34,12 +32,10 @@ class _Layout {
               width: 20.0,
               height: 30.0,
               ),
-            Container(
-              padding: EdgeInsets.fromLTRB( 20.0, 8.0, 8.0, 8.0
-                                            ),
+            Center(
               child: Text(
                 'Seu Carrinho de Compras', style: TextStyle( color: Colors.white
-                                                       ),
+                                                             ),
                 ),
               ),
           ],
@@ -52,14 +48,14 @@ class _Layout {
 
   static List<Widget> _getActions(BuildContext context) {
 
-    List<Widget> items = List<Widget>( );
+    List<Widget> itemsCarrinho = List<Widget>( );
 
     //fora da pagina add items nao mostra acao alguma
 
     TextEditingController _c = TextEditingController( );
     TextEditingController _c2 = TextEditingController( );
 
-    items.add(
+    itemsCarrinho.add(
       GestureDetector(
 
         onTap: () {
@@ -67,7 +63,7 @@ class _Layout {
               context: context,
               barrierDismissible: false,
               builder: (BuildContext ctx) {
-                final input = TextFormField(
+                final inputNomeProduto = TextFormField(
                   controller: _c,
                   decoration: InputDecoration(
                     hintText: 'Nome do Produto',
@@ -79,7 +75,7 @@ class _Layout {
                         ),
                     ),
                   );
-                final input2 = TextFormField(
+                final inputValorProduto = TextFormField(
                   controller: _c2,
                   decoration: InputDecoration(
                     hintText: 'Valor do Produto',
@@ -98,8 +94,8 @@ class _Layout {
                   content: SingleChildScrollView(
                     child: ListBody(
                       children: <Widget>[
-                        input,
-                        input2
+                        inputNomeProduto,
+                        inputValorProduto
                       ],
                       ),
                     ),
@@ -122,17 +118,19 @@ class _Layout {
                                                        ),
                         ),
                       onPressed: () {
-                        ListaCarrinho.items.add(
+
+                        // MÉTODO DE ADICIONAR PRODUTOS NA LISTA
+                        GeradorListaCarrinho.itemsCarrinho.add(
                           ListTile(
                             title: Text(_c.text),
-                            trailing: Text(_c2.text),
+                            subtitle: Text(_c2.text),
                             onTap: () {
-                              Navigator.of(context).pushNamed('listPage');
+                              Navigator.of(context).pushNamed('geradorListaCarrinho');
                             },
                             ),
                           );
 
-                        Navigator.of(ctx).popAndPushNamed('layoutLista');
+                        Navigator.of(ctx).popAndPushNamed('layoutCarrinho');
                       },
                       ),
                   ],
@@ -150,7 +148,7 @@ class _Layout {
         ),
       );
 
-    return items;
+    return itemsCarrinho;
 
   }
 }
