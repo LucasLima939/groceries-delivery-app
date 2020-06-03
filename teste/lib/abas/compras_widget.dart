@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:teste/abas/finalizarCompras.dart';
 import 'package:teste/produto/Categorias.dart';
-import 'package:teste/widgets/layoutApp.dart';
-//import 'Produto.dart';
+import 'package:teste/produto/Produto.dart';
+import 'package:teste/widgets/trocaProduto.dart';
 
 
 class Compras_Widget extends StatefulWidget {
@@ -10,6 +11,9 @@ class Compras_Widget extends StatefulWidget {
 }
 
 class _Compras_WidgetState extends State<Compras_Widget> {
+  
+
+  int indice = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +31,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                   Text(
                     'Categorias',
                     style: TextStyle(
-                      color: LayoutApp.textBlack,
+                      color: Colors.blueGrey,
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
@@ -35,7 +39,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                     ),
                   IconButton(
                     icon: Icon(
-                      Icons.more_horiz, color: LayoutApp.primaryTudodBom, // COR
+                      Icons.more_horiz,
                       ),
                     iconSize: 30.0,
                     color: Colors.red,
@@ -68,7 +72,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                           Text(
                             categorias[index].nome,
                             style: TextStyle(
-                              color: LayoutApp.textBlack,
+                              color: Colors.blueGrey,
                               fontWeight: FontWeight.bold,
                               fontSize: 16.0,
                               letterSpacing: 1.0,
@@ -91,7 +95,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                   Text(
                     'Populares',
                     style: TextStyle(
-                      color: LayoutApp.textBlack,
+                      color: Colors.blueGrey,
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
@@ -99,7 +103,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                     ),
                   IconButton(
                     icon: Icon(
-                      Icons.more_horiz, color: LayoutApp.primaryTudodBom, // COR
+                      Icons.more_horiz,
                       ),
                     iconSize: 30.0,
                     color: Colors.red,
@@ -122,7 +126,14 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                         children: <Widget>[
                           InkWell(
                             //método para carregar nova Página. Adicionar no main a 'route'.
-                            onTap: (){Navigator.of(context).pushNamed('compra2');},
+                            onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => trocarLayout(
+                                  nome: produtos[index].nome, 
+                                  foto: produtos[index].imagePNG, 
+                                  descricao: produtos[index].descricao, 
+                                  preco: produtos[index].preco,
+                                  )));
+                              },
                               borderRadius: BorderRadius.circular(20),
                               child: Container(
                                 height: 200,
@@ -142,7 +153,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                             //Nome embaixo do Container acessa o 'index' da lista produtos.
                             produtos[index].nome,
                               style: TextStyle(
-                                color: LayoutApp.textBlack,
+                                color: Colors.blueGrey,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16.0,
                                 letterSpacing: 1.0,
@@ -165,7 +176,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                   Text(
                     'Marcas',
                     style: TextStyle(
-                      color: LayoutApp.textBlack,
+                      color: Colors.blueGrey,
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
@@ -173,7 +184,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                     ),
                   IconButton(
                     icon: Icon(
-                      Icons.more_horiz, color: LayoutApp.primaryTudodBom, // COR
+                      Icons.more_horiz,
                       ),
                     iconSize: 30.0,
                     color: Colors.red,
@@ -226,7 +237,7 @@ class _Compras_WidgetState extends State<Compras_Widget> {
                             //Nome embaixo do Container acessa o 'index' da lista produtos.
                             marcas[index].nome,
                               style: TextStyle(
-                                color: LayoutApp.textBlack,
+                                color: Colors.blueGrey,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16.0,
                                 letterSpacing: 1.0,

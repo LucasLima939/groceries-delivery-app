@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:teste/widgets/agua.dart';
+import 'package:teste/widgets/bolos_paes_sopas.dart';
 import 'amantesDaCozinha.dart';
 import 'bebidas.dart';
 import 'frutasEVegetais.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-import 'package:carousel_pro/carousel_pro.dart';
-
 import 'layoutApp.dart';
 
 //import 'package:gradient_widgets/gradient_widgets.dart';
@@ -102,6 +101,11 @@ class _MyButtonState extends State<MyButton> {
           AmantesDaCozinha(),
           SizedBox(height: 40,),
           Bebidas(),
+          SizedBox(height: 40,),
+          AguaContainer(),
+          SizedBox(height: 40,),
+          BolosPaesSopas(),
+          SizedBox(height: 40,)
         ],
         ),
         );

@@ -45,6 +45,7 @@ class Cadastro extends StatelessWidget {
                   ),
                 child: SizedBox.expand(
                   child: FlatButton(
+                    onPressed: (){},
                     child: Icon(
                       Icons.add,
                       color: Colors.white,
@@ -126,17 +127,20 @@ class Cadastro extends StatelessWidget {
                   ),
                 ),
               child: SizedBox.expand(
-                child: Center(
-                  child: Text(
-                    "Cadastrar",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20,
+                child: FlatButton(
+                  onPressed: (){},
+                  child: Center(
+                    child: Text(
+                      "Cadastrar",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20,
+                        ),
+                      textAlign: TextAlign.center,
                       ),
-                    textAlign: TextAlign.center,
                     ),
-                  ),
+                ),
                 ),
               ),
             SizedBox(

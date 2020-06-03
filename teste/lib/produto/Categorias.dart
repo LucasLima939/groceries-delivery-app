@@ -47,12 +47,18 @@ final Produto banana = Produto (
   id: 7,
   nome: 'Banana',
   imageURL: 'assets/images/banana.jpg',
+  imagePNG: 'assets/images/bananaXD.png',
+  preco: 3.43,
+  descricao: 'Banana é boa com whey bicho, agora tem que ser de baunilha, o resto é lixo',
 );
 
 final Produto maca = Produto(
   id: 8,
   nome: 'Maça',
   imageURL: 'assets/images/maça.jpg',
+  imagePNG: 'assets/images/maçaPNG.png',
+  preco: 3.43,
+  descricao: 'Maça verde é bom pakas, mas essa aqui é vermelha mesmo porra',
 );
 
 final Produto uva = Produto(
