@@ -27,16 +27,17 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   Icon cusIcon = Icon(Icons.search, color: LayoutApp.primaryTudodBom);
-  Widget cusLogo = Container(//Logo personalizada. Trocar apenas o 'asset'.
-                                  width: 180,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('assets/images/mercadinhoTudoDeBom.png'),//Trocar logo do mercadinho.
-                                          fit: BoxFit.cover,
-                                          )
-                                        ),
-                                  );
+  Widget cusLogo = 
+  Container(//Logo personalizada. Trocar apenas o 'asset'.
+  width: 150,
+  height: 50,
+  alignment: Alignment.centerLeft,
+  decoration: BoxDecoration(
+    image: DecorationImage(image: AssetImage('assets/images/mercadinhoTudoDeBom.png'),//Trocar logo do mercadinho.
+      fit: BoxFit.cover,
+    )
+  ),
+  );
 
   int _currentIndex = 0;//Muda de acordo com a 'aba' selecionada;
   final abas = [//Cada indice é carrega uma page: 0 - home; 1 - Ofertas; 2 - compras.
@@ -52,7 +53,7 @@ class _HomeState extends State<Home> {
    return Scaffold(
      resizeToAvoidBottomInset: false,//Arruma o erro de overflow do teclado;
      appBar: AppBar(
-       title: Center(child: cusLogo),
+       title: cusLogo,
         actions: <Widget>[
           IconButton(
             onPressed: (){
@@ -65,18 +66,19 @@ class _HomeState extends State<Home> {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: 'Digite o produto desejado...',
-                      hintStyle: TextStyle(fontSize: 16.0, color: Colors.white),
+                      hintStyle: TextStyle(fontSize: 16.0, color: Colors.black),
                     ),
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 16.0,
                     ),
                   );
                 }else{
                   this.cusIcon = Icon(Icons.search);
                   this.cusLogo = Container(
-                    width: 50,
+                    width: 150,
                     height: 50,
+                    alignment: Alignment.centerLeft,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/images/mercadinhoTudoDeBom.png'),//mudar aqui.

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:teste/widgets/agua.dart';
+import 'package:teste/widgets/bolos_paes_sopas.dart';
 import 'amantesDaCozinha.dart';
 import 'bebidas.dart';
 import 'frutasEVegetais.dart';
@@ -97,6 +99,11 @@ class _MyButtonState extends State<MyButton> {
           AmantesDaCozinha(),
           SizedBox(height: 40,),
           Bebidas(),
+          SizedBox(height: 40,),
+          AguaContainer(),
+          SizedBox(height: 40,),
+          BolosPaesSopas(),
+          SizedBox(height: 40,)
         ],
         ),
         );
