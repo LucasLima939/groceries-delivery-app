@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
-
 import 'layoutApp.dart';
 
-//import 'homePage.dart';
 
 // VER PARÂMETROS CTRL + P e DOCUMENTATION CTRL + Q
 
@@ -202,6 +199,10 @@ Widget fazContainer({String texto, String foto}){
 
 class FormasPagamento extends StatelessWidget {
 
+  @override
+  _FormasPagamentoState createState() => _FormasPagamentoState();
+}
+class _FormasPagamentoState extends State<FormasPagamento> {
   int _counter = 0;
 
   void _incrementCounter() {

@@ -1,32 +1,35 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:teste/widgets/myWidgets.dart';
 
 
 
+class GeradorListaCarrinho extends StatefulWidget {
 
-class ListaCarrinho extends StatefulWidget { //homelist
-  static List<Widget> items = List<Widget>();
+  static List<Widget> itemsCarrinho = List<Widget>();
+
   @override
-  _ListaCarrinhoState createState() => _ListaCarrinhoState();
+  _GeradorListaCarrinhoState createState() => _GeradorListaCarrinhoState();
 }
 
-class _ListaCarrinhoState extends State<ListaCarrinho> {
+class _GeradorListaCarrinhoState extends State<GeradorListaCarrinho> {
+
   @override
   Widget build(BuildContext context) {
 
-    List<Widget> values = List<Widget>();
-    if (ListaCarrinho.items.length == 0) {
-      values.add(ListTile(
-        title: Text('nome do produto'),
-        trailing: Text('R\$ 1,99'),
-        ),);
+    if (GeradorListaCarrinho.itemsCarrinho.length == 0) {
+
+      // Texto retornado se a lista estiver vazia;
+      return Text(
+        "Seu carrinho está vazio"
+      );
     }
     return ListView(
         shrinkWrap: true,
-        children: (ListaCarrinho.items.length == 0) ? values : ListaCarrinho.items
+        children: GeradorListaCarrinho.itemsCarrinho
         );
+
   }
+
 }
 
 class ListCar extends StatefulWidget {

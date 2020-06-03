@@ -11,10 +11,14 @@ import 'package:flutter/material.dart';
 import 'package:teste/widgets/LayoutLista.dart';
 import 'package:teste/widgets/layoutApp.dart';
 import 'package:teste/widgets/myWidgets.dart';
+import 'abas/finalizarCompras.dart';
 import 'abas/cadastro.dart';
 import 'package:teste/abas/compras_widget.dart';
 import 'abas/homePage.dart';
 import 'package:teste/abas/reset-password.dart';
+import 'carrinhoFinalizarCompras/geradorListaCarrinho.dart';
+import 'carrinhoFinalizarCompras/layoutCarrinho.dart';
+import 'widgets/layoutApp.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,7 +40,9 @@ class MyApp extends StatelessWidget {
         'seusPedidos': (BuildContext context) => SeusPedidos(),
         'esqueciSenha': (BuildContext context) => ResetPasswordPage(),
         'paginaCompras': (BuildContext context) => Compras_Widget(),
-        'paginaOfertas': (BuildContext context) => Cadastro(),
+        'paginaOfertas': (BuildContext context) => Cadastro(),        
+        'layoutCarrinho': (BuildContext context) => LayoutCarrinho(),
+        'geradorListaCarrinho': (BuildContext context) => GeradorListaCarrinho(),
       },
     );
   }

@@ -7,8 +7,6 @@ import 'frutasEVegetais.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'layoutApp.dart';
 
-//import 'package:gradient_widgets/gradient_widgets.dart';
-
 class MyButton extends StatefulWidget {
   @override
   _MyButtonState createState() => _MyButtonState();

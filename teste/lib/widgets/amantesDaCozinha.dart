@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gradient_widgets/gradient_widgets.dart';
 
 class AmantesDaCozinha extends StatefulWidget {
   @override
