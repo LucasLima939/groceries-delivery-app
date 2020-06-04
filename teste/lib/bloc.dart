@@ -1,24 +1,36 @@
 import 'dart:async';
 import 'package:rxdart/rxdart.dart';
+import 'package:teste/carrinhoFinalizarCompras/listRepository.dart';
 
-/// Esse é o INICIO do nosso padrão de projeto Bloc;
+/** Este é o INICIO do nosso padrão de projeto Bloc
+ *
+ * O Bloc Pattern é importante para otimizarmos nossas aplicações, construindo um back-end mais rápido e dinâmico
+ */
 class Bloc {
 
-  /// O Bloc Pattern é importante para otimizarmos nossas aplicações, construindo um back-end mais rápido e dinâmico
-
+  /// CONSTRUTOR PADRÃO
 
   BehaviorSubject<String> _controller = BehaviorSubject<String>.seeded("texto inicial");
-  /// Stream<String> output0 = controller.stream... para o bloc essa construção não funciona, é necessário o get;
+  // para o bloc é necessário o get;
   Stream<int> get output0 => _controller.stream.map((data)=> data.length);
-  /// o uso de fluxo => equivale a:
-  Stream<String> get output01{ return _controller.stream;}
-
-
+  Stream<String> get output01 => _controller.stream;
   Sink<String> get input0 => _controller.sink;
 
+  /** FILTRO DE LISTAS
+   *  O .map recebe o texto e retorna a lista filtrada (.toList garante esse retorno)
+   *  Para filtrar diretamente, o where coloca o parâmetro de apenas retornar o item que possui o texto solicitado
+   *  Por fim, a lista é filtrada e retorna apenas o texto pedido
+   */
+
+  ListRepository _listRepository = ListRepository();
+
+  final listFilter$ = BehaviorSubject<String>(); // o $ no final indica que é controlador de fluxo que recebe uma String p filtrar
+  Sink<String> get input => listFilter$.sink;
+  Stream<List<String>> get output => listFilter$.stream.map(_listRepository.filter);
 }
-/// FIM do Bloc
-/// Abaixo temos uma breve explicação das funcionalidades do StreamController e seus variantes. Run "bloc.dart";
+/** FIM do Bloc
+ *  Abaixo temos uma breve explicação das funcionalidades do StreamController e seus variantes. Run "bloc.dart"
+ */
 /*
 main() {
 

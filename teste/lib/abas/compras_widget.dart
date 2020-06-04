@@ -5,12 +5,15 @@ import 'package:teste/produto/Produto.dart';
 import 'package:teste/widgets/trocaProduto.dart';
 
 
-class Compras_Widget extends StatefulWidget {
+class ComprasPage extends StatefulWidget {
+
+  static String tag = 'comprasPage';
+
   @override
-  _Compras_WidgetState createState() => _Compras_WidgetState();
+  _ComprasPageState createState() => _ComprasPageState();
 }
 
-class _Compras_WidgetState extends State<Compras_Widget> {
+class _ComprasPageState extends State<ComprasPage> {
   
 
   int indice = 0;

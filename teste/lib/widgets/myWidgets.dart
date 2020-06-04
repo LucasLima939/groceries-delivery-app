@@ -119,6 +119,10 @@ class _CustomAppBar extends State<CustomAppBar> {
 
 
 class SeusPedidos extends StatelessWidget {
+
+
+  static String tag = 'seusPedidos';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -197,7 +201,7 @@ Widget fazContainer({String texto, String foto}){
     );
 }
 
-class FormasPagamento extends StatelessWidget {
+class FormasPagamento extends StatefulWidget {
 
   @override
   _FormasPagamentoState createState() => _FormasPagamentoState();
@@ -413,6 +417,9 @@ class _ListaPedidosState extends State<ListaPedidos> {
 }
 
 class ListPage extends StatefulWidget {
+
+  static String tag = 'listPage';
+
   @override
   _ListPageState createState() => _ListPageState();
 }

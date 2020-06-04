@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 class GeradorListaCarrinho extends StatefulWidget {
 
+  static String tag = 'geradorListaCarrinho';
+
   static List<Widget> itemsCarrinho = List<Widget>();
 
   @override

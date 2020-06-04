@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:teste/widgets/layoutApp.dart';
 
-class Cadastro extends StatelessWidget {
+class CadastroPage extends StatelessWidget {
+
+  static String tag = 'cadastroPage';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

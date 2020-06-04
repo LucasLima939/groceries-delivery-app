@@ -29,6 +29,8 @@ dependencies:
   carousel_slider: ^2.1.0
   carousel_pro: ^1.0.0
   google_fonts: ^1.1.0
+  mobx:
+  flutter_mobx: ^1.1.0
 
 dev_dependencies:
   flutter_test:
