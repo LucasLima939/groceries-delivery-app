@@ -42,8 +42,8 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;//Muda de acordo com a 'aba' selecionada;
   final abas = [//Cada indice é carrega uma page: 0 - home; 1 - Ofertas; 2 - compras.
     MyButton(),
-    Cadastro(),
-    Compras_Widget(),
+    CadastroPage(),
+    ComprasPage(),
     Mais(),
   ];//Widgets que irão carregar de acordo com a 'aba' selecionada;
     //Aqui só mudei de cor pra ver se pelo menos tá funcionando;

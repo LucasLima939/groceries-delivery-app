@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class ResetPasswordPage extends StatelessWidget {
+
+  static String tag = 'resetPasswordPage';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,26 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:teste/widgets/myWidgets.dart';
-import 'geradorListaCarrinho.dart';
 
 
 
-class LayoutCarrinho extends StatelessWidget {
+class LayoutLista extends StatelessWidget {
 
-  static String tag = 'layoutCarrinho';
+  static String tag = 'layoutLista';
 
   @override
   Widget build(BuildContext context) {
 
-    final content = GeradorListaCarrinho();
+    final content = ListaPedidos();
 
-    return _Layout.getContent(context, content);
+    return Layout.getContent(context, content);
 
   }
 }
 
 
-class _Layout {
+class Layout {
 
   static int currItem = 1;
 
@@ -34,10 +33,12 @@ class _Layout {
               width: 20.0,
               height: 30.0,
               ),
-            Center(
+            Container(
+              padding: EdgeInsets.fromLTRB( 20.0, 8.0, 8.0, 8.0
+                                            ),
               child: Text(
-                'Seu Carrinho de Compras', style: TextStyle( color: Colors.white
-                                                             ),
+                'Listas de Compras', style: TextStyle( color: Colors.white
+                                                       ),
                 ),
               ),
           ],
@@ -50,14 +51,13 @@ class _Layout {
 
   static List<Widget> _getActions(BuildContext context) {
 
-    List<Widget> itemsCarrinho = List<Widget>( );
+    List<Widget> items = List<Widget>( );
 
     //fora da pagina add items nao mostra acao alguma
 
     TextEditingController _c = TextEditingController( );
-    TextEditingController _c2 = TextEditingController( );
 
-    itemsCarrinho.add(
+    items.add(
       GestureDetector(
 
         onTap: () {
@@ -65,22 +65,10 @@ class _Layout {
               context: context,
               barrierDismissible: false,
               builder: (BuildContext ctx) {
-                final inputNomeProduto = TextFormField(
+                final input = TextFormField(
                   controller: _c,
                   decoration: InputDecoration(
                     hintText: 'Nome do Produto',
-                    contentPadding: EdgeInsets.fromLTRB( 20, 10, 20, 10
-                                                         ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular( 5
-                                                             )
-                        ),
-                    ),
-                  );
-                final inputValorProduto = TextFormField(
-                  controller: _c2,
-                  decoration: InputDecoration(
-                    hintText: 'Valor do Produto',
                     contentPadding: EdgeInsets.fromLTRB( 20, 10, 20, 10
                                                          ),
                     border: OutlineInputBorder(
@@ -96,8 +84,7 @@ class _Layout {
                   content: SingleChildScrollView(
                     child: ListBody(
                       children: <Widget>[
-                        inputNomeProduto,
-                        inputValorProduto
+                        input
                       ],
                       ),
                     ),
@@ -120,19 +107,18 @@ class _Layout {
                                                        ),
                         ),
                       onPressed: () {
-
-                        // MÉTODO DE ADICIONAR PRODUTOS NA LISTA
-                        GeradorListaCarrinho.itemsCarrinho.add(
+                        ListaPedidos.items.add(
                           ListTile(
+                            leading: Icon(Icons.pages),
                             title: Text(_c.text),
-                            subtitle: Text(_c2.text),
+                            trailing: Icon(Icons.settings_applications),
                             onTap: () {
-                              Navigator.of(context).pushNamed('geradorListaCarrinho');
+                              Navigator.of(context).pushNamed('listPage');
                             },
                             ),
                           );
 
-                        Navigator.of(ctx).popAndPushNamed('layoutCarrinho');
+                        Navigator.of(ctx).popAndPushNamed('layoutLista');
                       },
                       ),
                   ],
@@ -150,7 +136,7 @@ class _Layout {
         ),
       );
 
-    return itemsCarrinho;
+    return items;
 
   }
 }
