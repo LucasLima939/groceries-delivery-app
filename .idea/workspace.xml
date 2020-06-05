@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96c8ddfb-15dd-4762-be72-8dded8b0609c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/listRepository.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teste/lib/controller.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teste/lib/widgets/layoutLista.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teste/test/bloc_test.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teste/test/list_repository_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/abas/cadastro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/abas/cadastro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/abas/compras_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/abas/compras_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/abas/homePage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/abas/homePage.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/abas/reset-password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/abas/reset-password.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/bloc.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/bloc.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/geradorListaCarrinho.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/geradorListaCarrinho.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/layoutCarrinho.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/layoutCarrinho.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/testando.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/testando.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teste/lib/controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teste/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/widgets/LayoutLista.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/lib/widgets/myWidgets.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/lib/widgets/myWidgets.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teste/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/teste/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teste/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/teste/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/teste/test/widget_test.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Flutter Test.Bloc send text and return list">
+  <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="testando.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/teste/lib/carrinhoFinalizarCompras/testando.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/teste" />
@@ -106,11 +91,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter Test.Bloc send text and return list" />
         <item itemvalue="Flutter Test.List name filter" />
         <item itemvalue="Dart Command Line App.testando.dart" />
         <item itemvalue="Flutter.getListHtml.dart" />
-        <item itemvalue="Flutter.main.dart" />
       </list>
     </recent_temporary>
   </component>
