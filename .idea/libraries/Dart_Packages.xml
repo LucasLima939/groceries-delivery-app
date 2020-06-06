@@ -205,13 +205,6 @@
             </list>
           </value>
         </entry>
-        <entry key="flutter_mobx">
-          <value>
-            <list>
-              <option value="C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_mobx-1.1.0/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="flutter_test">
           <value>
             <list>
@@ -642,7 +635,6 @@
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/dio-3.0.9/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/file-5.1.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-0.10.11/lib" />
-      <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_mobx-1.1.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/glob-1.2.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/google_fonts-1.1.0/lib" />
       <root url="file://C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/gradient_widgets-0.5.2/lib" />
