@@ -9,8 +9,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:teste/controller.dart';
 
 import 'package:teste/widgets/layoutLista.dart';
 import 'package:teste/widgets/layoutApp.dart';
@@ -25,42 +23,7 @@ import 'carrinhoFinalizarCompras/layoutCarrinho.dart';
 
 import 'widgets/layoutApp.dart';
 
-void main() => runApp(Testando());
-
-class Testando extends StatelessWidget {
-
-  final controller = Controller();
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("MobX"),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Observer( // observer é uma classe do mobix
-                builder: (_) { // ele identifica qualquer obervable dentro
-                  return Text( // quando ele troca de estado, observer rebilda
-                  '${controller.counter}',
-              style: Theme.of(context).textTheme.headline4,);
-              },
-              ),
-            ],
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            controller.increment();},
-          child: Icon(Icons.add),
-        ),
-      ),
-    );
-  }
-}
+void main() => runApp(AppMarket());
 
 class AppMarket extends StatelessWidget {
 
