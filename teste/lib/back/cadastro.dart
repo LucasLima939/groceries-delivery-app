@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:teste/widgets/layoutApp.dart';
-import '../controller.dart';
+import 'package:teste/back/validate.dart';
+import 'package:teste/layout/layout_color.dart';
 
 class CadastroPage extends StatefulWidget {
   static String tag = 'cadastroPage';
@@ -11,7 +11,7 @@ class CadastroPage extends StatefulWidget {
 }
 
 class _CadastroPageState extends State<CadastroPage> {
-  final controller = Controller();
+  final validate = Validate();
 
   _textField(
       {String labelText, obscureText, onChanged, String Function() errorText}) {
@@ -56,8 +56,8 @@ class _CadastroPageState extends State<CadastroPage> {
                     end: Alignment.bottomRight,
                     stops: [0.3, 1.0],
                     colors: [
-                      LayoutApp.primaryTudodBom, // COR
-                      LayoutApp.primaryTudodBom[600] // COR
+                      LayoutColor.primaryColor, // COR
+                      LayoutColor.primaryColor[600] // COR
                     ],
                   ),
                   border: Border.all(
@@ -86,9 +86,9 @@ class _CadastroPageState extends State<CadastroPage> {
               builder: (_) {
                 return _textField(
                     obscureText: false,
-                    errorText: controller.validateName,
+                    errorText: validate.validateName,
                     labelText: "Nome",
-                    onChanged: controller.client.changeName);
+                    onChanged: validate.client.changeName);
               },
             ),
             SizedBox(
@@ -97,9 +97,9 @@ class _CadastroPageState extends State<CadastroPage> {
             Observer(builder: (_) {
               return _textField(
                   obscureText: false,
-                  errorText: controller.validateEmail,
+                  errorText: validate.validateEmail,
                   labelText: "Email",
-                  onChanged: controller.client.changeEmail);
+                  onChanged: validate.client.changeEmail);
             }),
             SizedBox(
               height: 10.0,
@@ -107,19 +107,19 @@ class _CadastroPageState extends State<CadastroPage> {
             Observer(builder: (_) {
               return _textField(
                   obscureText: false,
-                  errorText: controller.validateCpf,
+                  errorText: validate.validateCpf,
                   labelText: "CPF",
-                  onChanged: controller.client.changeCpf);
+                  onChanged: validate.client.changeCpf);
             }),
             SizedBox(
               height: 10.0,
             ),
             Observer(builder: (_) {
               return _textField(
-                  errorText: controller.validatePassword,
+                  errorText: validate.validatePassword,
                   labelText: "Senha",
                   obscureText: true,
-                  onChanged: controller.client.changePassword);
+                  onChanged: validate.client.changePassword);
             }),
             SizedBox(
               height: 25,
@@ -133,8 +133,8 @@ class _CadastroPageState extends State<CadastroPage> {
                   end: Alignment.bottomRight,
                   stops: [0.3, 1.0],
                   colors: [
-                    LayoutApp.primaryTudodBom, // COR
-                    LayoutApp.primaryTudodBom[600] // COR
+                    LayoutColor.primaryColor, // COR
+                    LayoutColor.primaryColor[600] // COR
                   ],
                 ),
                 borderRadius: BorderRadius.all(

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'layoutApp.dart';
-
+import 'package:teste/layout/layout_color.dart';
 
 // VER PARÂMETROS CTRL + P e DOCUMENTATION CTRL + Q
 
@@ -12,7 +11,14 @@ class NormalButton extends StatefulWidget {
   final String buttonText;
   final Widget nextPage;
 
-  NormalButton({Key key, this.child, this.iconColor, this.iconToSet, this.nextPage, this.buttonText = '',}) : super(key: key);
+  NormalButton({
+    Key key,
+    this.child,
+    this.iconColor,
+    this.iconToSet,
+    this.nextPage,
+    this.buttonText = '',
+  }) : super(key: key);
 
   _NormalButtonState createState() => _NormalButtonState();
 }
@@ -29,43 +35,49 @@ class _NormalButtonState extends State<NormalButton> {
       ), // don't change
       padding: EdgeInsets.all(8.0),
       child: FlatButton(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              new Icon(widget.iconToSet ?? '',
-                         color: widget.iconColor ?? Colors.redAccent,
-                       ),
-              Text(widget.buttonText ?? '',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 20,
-                  ),
-                textAlign: TextAlign.left,
-                ),
-              new Icon(Icons.arrow_forward_ios,
-                         color: LayoutApp.primaryTudodBom, // COR
-                       ),
-            ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            new Icon(
+              widget.iconToSet ?? '',
+              color: widget.iconColor ?? Colors.redAccent,
             ),
+            Text(
+              widget.buttonText ?? '',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontSize: 20,
+              ),
+              textAlign: TextAlign.left,
+            ),
+            new Icon(
+              Icons.arrow_forward_ios,
+              color: LayoutColor.primaryColor,
+            ),
+          ],
+        ),
         onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => widget.nextPage ?? ''),
-            );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => widget.nextPage ?? ''),
+          );
         },
       ),
     );
-    }
+  }
 }
 
 class SimpleTitle extends StatefulWidget {
+  SimpleTitle({
+    Key key,
+    @required this.titlePadding,
+    this.titleText = '',
+  }) : super(key: key);
+  final String titleText;
+  final EdgeInsetsGeometry titlePadding;
 
-  SimpleTitle({Key key, @required this.titlePadding, this.titleText = '',}) : super(key: key);
-    final String titleText;
-    final EdgeInsetsGeometry titlePadding;
-
-  _SimpleTitle createState() => _SimpleTitle( );
+  _SimpleTitle createState() => _SimpleTitle();
 }
 
 class _SimpleTitle extends State<SimpleTitle> {
@@ -79,17 +91,18 @@ class _SimpleTitle extends State<SimpleTitle> {
           fontWeight: FontWeight.bold,
           color: Colors.black,
           fontSize: 20,
-          ),
-        textAlign: TextAlign.left,
         ),
-      );
+        textAlign: TextAlign.left,
+      ),
+    );
   }
 }
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-
-
-  CustomAppBar({Key key, this.setIcon, this.setTitle, this.setAction, this.setColor}) : preferredSize = Size.fromHeight(kToolbarHeight), super(key: key);
+  CustomAppBar(
+      {Key key, this.setIcon, this.setTitle, this.setAction, this.setColor})
+      : preferredSize = Size.fromHeight(kToolbarHeight),
+        super(key: key);
 
   @override
   final Size preferredSize;
@@ -99,7 +112,7 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
   final List<Widget> setAction;
 
   @override
-  _CustomAppBar createState() => _CustomAppBar( );
+  _CustomAppBar createState() => _CustomAppBar();
 }
 
 class _CustomAppBar extends State<CustomAppBar> {
@@ -109,18 +122,14 @@ class _CustomAppBar extends State<CustomAppBar> {
         title: widget.setTitle ?? Text(''), // pôr widget de logo
         backgroundColor: widget.setColor ?? Colors.red,
         leading: IconButton(
-          onPressed: (){},
+          onPressed: () {},
           icon: Icon(widget.setIcon ?? Icons.home),
-          ),
-        actions: widget.setAction
-        );
+        ),
+        actions: widget.setAction);
   }
 }
 
-
 class SeusPedidos extends StatelessWidget {
-
-
   static String tag = 'seusPedidos';
 
   @override
@@ -154,17 +163,17 @@ class SeusPedidos extends StatelessWidget {
             ),
           ),*/
         body: Center(
-            child: Text('Você ainda não possui nenhum pedido'),
+          child: Text('Você ainda não possui nenhum pedido'),
         ),
-        ),
-      );
+      ),
+    );
   }
 }
 
-Widget fazContainer({String texto, String foto}){
+Widget fazContainer({String texto, String foto}) {
   return Stack(
-      children: <Widget>[
-        Center(
+    children: <Widget>[
+      Center(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: Container(
@@ -175,11 +184,11 @@ Widget fazContainer({String texto, String foto}){
               color: Colors.white,
               borderRadius: BorderRadius.circular(30),
               image: DecorationImage(
-              image: AssetImage(foto),//Insere a foto passada;
-              fit: BoxFit.cover,
+                image: AssetImage(foto), //Insere a foto passada;
+                fit: BoxFit.cover,
               ),
             ),
-            child: Text('dd'),//AguaContainer(),//ARROW BUTTON;
+            child: Text('dd'), //AguaContainer(),//ARROW BUTTON;
           ),
         ),
       ),
@@ -187,31 +196,32 @@ Widget fazContainer({String texto, String foto}){
         left: 38,
         top: 350,
         child: Text(
-          texto,//TEXTO passado como param.
+          texto, //TEXTO passado como param.
           textAlign: TextAlign.left,
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 29,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 3.0
-          ),
+              color: Colors.white,
+              fontSize: 29,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3.0),
         ),
       ),
-      ],
-    );
+    ],
+  );
 }
 
 class FormasPagamento extends StatefulWidget {
-
   @override
   _FormasPagamentoState createState() => _FormasPagamentoState();
 }
+
 class _FormasPagamentoState extends State<FormasPagamento> {
   int _counter = 0;
 
   void _incrementCounter() {
     setState() {
-      _counter++;}}
+      _counter++;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -243,16 +253,18 @@ class _FormasPagamentoState extends State<FormasPagamento> {
             ],
             ),
           ),*/
-        body: Center( // se não tiver uma forma de pagamento cadastrada
+        body: Center(
+          // se não tiver uma forma de pagamento cadastrada
           child: Text('Clique no botão para adicionar uma forma de pagamento'),
-          ),
+        ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: LayoutApp.primaryTudodBom, // COR
+          backgroundColor: LayoutColor.primaryColor,
           onPressed: () {},
           tooltip: 'Increment',
-          child: Icon(Icons.control_point),),
+          child: Icon(Icons.control_point),
         ),
-      );
+      ),
+    );
   }
 }
 
@@ -288,15 +300,16 @@ class EnderecosEntrega extends StatelessWidget {
             ),
           ),*/
         body: Center(
-                      child: Text('Clique no botão para adicionar um endereço de entrega'),
-                      ),
+          child: Text('Clique no botão para adicionar um endereço de entrega'),
+        ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: LayoutApp.primaryTudodBom, // COR
+          backgroundColor: LayoutColor.primaryColor,
           onPressed: () {},
           tooltip: 'Increment',
-            child: Icon(Icons.control_point),),
+          child: Icon(Icons.control_point),
         ),
-      );
+      ),
+    );
   }
 }
 
@@ -333,43 +346,51 @@ class AlterarSenha extends StatelessWidget {
           ),*/
         body: Column(
           children: <Widget>[
-            Row(children: <Widget>[
-              Container(
-                padding: const EdgeInsets.fromLTRB(8.0, 20.0, 0.0, 2.0),
-                child: Text('Senha Atual: ',
-                       style: const TextStyle(
-                         fontWeight: FontWeight.bold,
-                         fontSize: 20.0,
-                         ),
-                     ),
-              ),
+            Row(
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.fromLTRB(8.0, 20.0, 0.0, 2.0),
+                  child: Text(
+                    'Senha Atual: ',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                    ),
+                  ),
+                ),
                 // box para adicionar a senha oculta
                 // box para visualizar a senha oculta
-              ],),
-            Row(children: <Widget>[
-              Container(
-                padding: const EdgeInsets.fromLTRB(10.0, 20.0, 0.0, 15.0),
-                child: Text('Nova Senha: ',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
-                                ),
-                            ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.fromLTRB(10.0, 20.0, 0.0, 15.0),
+                  child: Text(
+                    'Nova Senha: ',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                    ),
+                  ),
                 ),
-              // box para digitar a nova senha oculta
-              // box para vizualizar a senha oculta
-              ],),
-            Row(children: <Widget>[
-              Text('Esqueci a senha'),
-              RaisedButton(
-                child: Text('Alterar Senha'),
-                onPressed: () {},
-              ),
-              ],),
+                // box para digitar a nova senha oculta
+                // box para vizualizar a senha oculta
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Text('Esqueci a senha'),
+                RaisedButton(
+                  child: Text('Alterar Senha'),
+                  onPressed: () {},
+                ),
+              ],
+            ),
           ],
         ),
-        ),
-      );
+      ),
+    );
   }
 }
 
@@ -382,16 +403,17 @@ class ComprasMyWidget extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Compras'),
-          ),
+        ),
         body: Center(
           child: Text('Dboa'),
-          ),
         ),
-      );
+      ),
+    );
   }
 }
 
-class ListaPedidos extends StatefulWidget { //homelist
+class ListaPedidos extends StatefulWidget {
+  //homelist
   static List<Widget> items = List<Widget>();
   @override
   _ListaPedidosState createState() => _ListaPedidosState();
@@ -400,24 +422,24 @@ class ListaPedidos extends StatefulWidget { //homelist
 class _ListaPedidosState extends State<ListaPedidos> {
   @override
   Widget build(BuildContext context) {
-
     List<Widget> values = List<Widget>();
     if (ListaPedidos.items.length == 0) {
-      values.add(ListTile(
-        leading: Icon(Icons.home),
-        title: Text('Faça sua lista personalizada de produtos'),
-        trailing: Icon(Icons.more_vert),
-        ),);
+      values.add(
+        ListTile(
+          leading: Icon(Icons.home),
+          title: Text('Faça sua lista personalizada de produtos'),
+          trailing: Icon(Icons.more_vert),
+        ),
+      );
     }
     return ListView(
         shrinkWrap: true,
-        children: (ListaPedidos.items.length == 0) ? values : ListaPedidos.items
-        );
+        children:
+            (ListaPedidos.items.length == 0) ? values : ListaPedidos.items);
   }
 }
 
 class ListPage extends StatefulWidget {
-
   static String tag = 'listPage';
 
   @override
@@ -427,7 +449,6 @@ class ListPage extends StatefulWidget {
 class _ListPageState extends State<ListPage> {
   @override
   Widget build(BuildContext mainContext) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Nome do Produto'),
@@ -438,11 +459,9 @@ class _ListPageState extends State<ListPage> {
             SizedBox(
               child: TextFormField(
                 scrollPadding: EdgeInsets.all(30),
-                decoration: InputDecoration(
-                    hintText: '    Pesquisar'
-                    ),
-                ),
+                decoration: InputDecoration(hintText: '    Pesquisar'),
               ),
+            ),
             Container(
               height: MediaQuery.of(context).size.height - 190,
               child: ListView(
@@ -453,56 +472,60 @@ class _ListPageState extends State<ListPage> {
                       onTap: () {
                         print('Marcar como adquirido');
                       },
-                      ),
+                    ),
                     title: Text('Nome do Item'),
                     subtitle: Text('4 X R\$ 1,50 = R\$6,00'),
                     trailing: GestureDetector(
                       child: Icon(Icons.delete),
-                      onTap: (){
+                      onTap: () {
                         print('Deletar');
                       },
-                      ),
+                    ),
                     onLongPress: () {
                       print('Editar Produto');
                     },
-                    ),
+                  ),
                 ],
-                ),
               ),
+            ),
             Container(
               color: Colors.deepOrange,
               height: 65,
-              child: Row(children: <Widget>[
-                Container(
-                  width: MediaQuery.of(context).size.width/2, // PEGOU O PADDING E DIVIDIU-SE POR DOIS P CADA CONTAINER
-                  padding: EdgeInsets.all(15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text('Total de Items: 1'),
-                      Text('Já adquirido: 0')
-                    ],
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width /
+                        2, // PEGOU O PADDING E DIVIDIU-SE POR DOIS P CADA CONTAINER
+                    padding: EdgeInsets.all(15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text('Total de Items: 1'),
+                        Text('Já adquirido: 0')
+                      ],
                     ),
                   ),
-                Container(
-                  color: Colors.indigo,
-                  width: MediaQuery.of(context).size.width/2,
-                  padding: EdgeInsets.all(15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text('Total: R\$ 15,00', style: TextStyle(fontSize: 24),),
-                    ],
+                  Container(
+                    color: Colors.indigo,
+                    width: MediaQuery.of(context).size.width / 2,
+                    padding: EdgeInsets.all(15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Total: R\$ 15,00',
+                          style: TextStyle(fontSize: 24),
+                        ),
+                      ],
                     ),
                   ),
-              ],),
+                ],
               ),
+            ),
           ],
-          ),
         ),
-      );
+      ),
+    );
   }
 }
-
-

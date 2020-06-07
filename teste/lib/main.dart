@@ -7,30 +7,28 @@
   comentado.
 */
 
-
 import 'package:flutter/material.dart';
 
 import 'package:teste/widgets/layoutLista.dart';
-import 'package:teste/widgets/layoutApp.dart';
 import 'package:teste/widgets/myWidgets.dart';
-import 'abas/cadastro.dart';
 import 'package:teste/abas/compras_widget.dart';
-import 'abas/homePage.dart';
 import 'package:teste/abas/reset-password.dart';
+import 'abas/abaMais.dart';
+import 'abas/home_page.dart';
+import 'back/cadastro.dart';
 import 'bloc.dart';
 import 'carrinhoFinalizarCompras/geradorListaCarrinho.dart';
 import 'carrinhoFinalizarCompras/layoutCarrinho.dart';
 
-import 'widgets/layoutApp.dart';
+import 'layout/layout_color.dart';
 
 void main() => runApp(AppMarket());
 
 class AppMarket extends StatelessWidget {
-
   Bloc bloc = Bloc();
 
-  final routes = <String, WidgetBuilder> {
-    LayoutLista.tag: (BuildContext context) => LayoutLista(),
+  final routes = <String, WidgetBuilder>{
+    ListaCompras.tag: (BuildContext context) => ListaCompras(),
     SeusPedidos.tag: (BuildContext context) => SeusPedidos(),
     ListPage.tag: (BuildContext context) => ListPage(),
     CadastroPage.tag: (BuildContext context) => CadastroPage(),
@@ -38,17 +36,18 @@ class AppMarket extends StatelessWidget {
     ResetPasswordPage.tag: (BuildContext context) => ResetPasswordPage(),
     LayoutCarrinho.tag: (BuildContext context) => LayoutCarrinho(),
     GeradorListaCarrinho.tag: (BuildContext context) => GeradorListaCarrinho(),
+    HomePage.tag: (BuildContext context) => HomePage(),
+    Mais.tag: (BuildContext context) => Mais()
   };
 
   @override
-  
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: LayoutApp.secondaryBaratao,
-        ),
-      home: Home(),
+        primarySwatch: LayoutColor.secondaryColor,
+      ),
+      home: HomePage(),
       routes: routes,
     );
   }

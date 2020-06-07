@@ -2,25 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:teste/widgets/myWidgets.dart';
 
-
-
-class LayoutLista extends StatelessWidget {
-
+class ListaCompras extends StatelessWidget {
   static String tag = 'layoutLista';
 
   @override
   Widget build(BuildContext context) {
-
     final content = ListaPedidos();
 
-    return Layout.getContent(context, content);
-
+    return LayoutListaCompras.getContent(context, content);
   }
 }
 
-
-class Layout {
-
+class LayoutListaCompras {
   static int currItem = 1;
 
   static Scaffold getContent(BuildContext context, content) {
@@ -32,34 +25,31 @@ class Layout {
             new SizedBox(
               width: 20.0,
               height: 30.0,
-              ),
+            ),
             Container(
-              padding: EdgeInsets.fromLTRB( 20.0, 8.0, 8.0, 8.0
-                                            ),
+              padding: EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
               child: Text(
-                'Listas de Compras', style: TextStyle( color: Colors.white
-                                                       ),
-                ),
+                'Listas de Compras',
+                style: TextStyle(color: Colors.white),
               ),
+            ),
           ],
-          ),
-        actions:  _getActions(context),
         ),
+        actions: _getActions(context),
+      ),
       body: content,
-      );
+    );
   }
 
   static List<Widget> _getActions(BuildContext context) {
-
-    List<Widget> items = List<Widget>( );
+    List<Widget> items = List<Widget>();
 
     //fora da pagina add items nao mostra acao alguma
 
-    TextEditingController _c = TextEditingController( );
+    TextEditingController _c = TextEditingController();
 
     items.add(
       GestureDetector(
-
         onTap: () {
           showDialog(
               context: context,
@@ -69,43 +59,36 @@ class Layout {
                   controller: _c,
                   decoration: InputDecoration(
                     hintText: 'Nome do Produto',
-                    contentPadding: EdgeInsets.fromLTRB( 20, 10, 20, 10
-                                                         ),
+                    contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular( 5
-                                                             )
-                        ),
-                    ),
-                  );
+                        borderRadius: BorderRadius.circular(5)),
+                  ),
+                );
 
                 return AlertDialog(
-                  title: Text( 'Nova Lista'
-                               ),
+                  title: Text('Nova Lista'),
                   content: SingleChildScrollView(
                     child: ListBody(
-                      children: <Widget>[
-                        input
-                      ],
-                      ),
+                      children: <Widget>[input],
                     ),
+                  ),
                   actions: <Widget>[
                     RaisedButton(
                       color: Colors.red,
                       child: Text(
-                        'Cancelar', style: TextStyle( color: Colors.white
-                                                      ),
-                        ),
-                      onPressed: () {
-                        Navigator.of( ctx
-                                      ).pop( );
-                      },
+                        'Cancelar',
+                        style: TextStyle(color: Colors.white),
                       ),
+                      onPressed: () {
+                        Navigator.of(ctx).pop();
+                      },
+                    ),
                     RaisedButton(
                       color: Colors.red,
                       child: Text(
-                        'Adicionar', style: TextStyle( color: Colors.white
-                                                       ),
-                        ),
+                        'Adicionar',
+                        style: TextStyle(color: Colors.white),
+                      ),
                       onPressed: () {
                         ListaPedidos.items.add(
                           ListTile(
@@ -115,28 +98,26 @@ class Layout {
                             onTap: () {
                               Navigator.of(context).pushNamed('listPage');
                             },
-                            ),
-                          );
+                          ),
+                        );
 
                         Navigator.of(ctx).popAndPushNamed('layoutLista');
                       },
-                      ),
+                    ),
                   ],
-                  );
-              }
-              );
+                );
+              });
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Icon( Icons.add, color: Colors.white,
-                       ),
+          child: Icon(
+            Icons.add,
+            color: Colors.white,
           ),
-
-
         ),
-      );
+      ),
+    );
 
     return items;
-
   }
 }

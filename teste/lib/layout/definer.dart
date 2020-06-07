@@ -1,13 +1,23 @@
 import 'package:mobx/mobx.dart';
-import 'models/client.dart';
-part 'controller.g.dart';
+import 'package:teste/models/client.dart';
+part 'definer.g.dart';
 
 /// mobx é muito util para modelos reativos;
 
-class Controller = ControllerBase with _$Controller;
+class Definer = DefinerBase with _$Definer;
 
-abstract class ControllerBase with Store {
+abstract class DefinerBase with Store {
   var client = Client();
+
+  /*@computed
+  bool get stateDefiner {
+    return 
+  }
+
+  @computed
+  bool get actionDefiner {
+    return 
+  }*/
 
   @computed
   bool get isValid {
