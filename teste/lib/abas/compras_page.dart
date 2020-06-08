@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:teste/abas/finalizarCompras.dart';
-import 'package:teste/produto/Categorias.dart';
-import 'package:teste/produto/Produto.dart';
-import 'package:teste/widgets/trocaProduto.dart';
+import 'package:teste/layout/layout_app.dart';
+import 'package:teste/models/categories.dart';
+import 'package:teste/widgets/troca_produto.dart';
 
-
-class ComprasPage extends StatefulWidget {
-
-  static String tag = 'comprasPage';
-
+class ComprasPage extends StatelessWidget {
+  static String tag = 'compras-page';
   @override
-  _ComprasPageState createState() => _ComprasPageState();
+  Widget build(BuildContext context) {
+    final content = Compras();
+    return Layout.getLayoutContent(context, content);
+  }
 }
 
-class _ComprasPageState extends State<ComprasPage> {
-  
+class Compras extends StatefulWidget {
+  @override
+  _ComprasState createState() => _ComprasState();
+}
 
+class _ComprasState extends State<Compras> {
   int indice = 0;
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,6 @@ class _ComprasPageState extends State<ComprasPage> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-
             //Começo das 'CATEGORIAS';
 
             Padding(
@@ -38,19 +39,19 @@ class _ComprasPageState extends State<ComprasPage> {
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
-                      ),
                     ),
+                  ),
                   IconButton(
                     icon: Icon(
                       Icons.more_horiz,
-                      ),
+                    ),
                     iconSize: 30.0,
                     color: Colors.red,
-                    onPressed: (){},
-                    ),
+                    onPressed: () {},
+                  ),
                 ],
-                ),
               ),
+            ),
             Container(
               height: 130,
               //color: Colors.amber,
@@ -64,13 +65,16 @@ class _ComprasPageState extends State<ComprasPage> {
                       child: Column(
                         children: <Widget>[
                           InkWell(
-                            onTap: (){print('clickou em categorias');},
+                            onTap: () {
+                              print('clickou em categorias');
+                            },
                             borderRadius: BorderRadius.circular(35),
                             child: CircleAvatar(
                               radius: 35.0,
-                              backgroundImage: AssetImage(categorias[index].imageURL),
-                              ),
+                              backgroundImage:
+                                  AssetImage(categorias[index].imageURL),
                             ),
+                          ),
                           SizedBox(height: 10.0),
                           Text(
                             categorias[index].nome,
@@ -79,14 +83,13 @@ class _ComprasPageState extends State<ComprasPage> {
                               fontWeight: FontWeight.bold,
                               fontSize: 16.0,
                               letterSpacing: 1.0,
-                              ),
                             ),
+                          ),
                         ],
-                        ),
-                      );
-                  }
-                  ),
-              ),
+                      ),
+                    );
+                  }),
+            ),
 
             //Começo dos 'POPULARES';
 
@@ -102,19 +105,19 @@ class _ComprasPageState extends State<ComprasPage> {
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
-                      ),
                     ),
+                  ),
                   IconButton(
                     icon: Icon(
                       Icons.more_horiz,
-                      ),
+                    ),
                     iconSize: 30.0,
                     color: Colors.red,
-                    onPressed: (){},
-                    ),
+                    onPressed: () {},
+                  ),
                 ],
-                ),
               ),
+            ),
             Container(
               height: 252,
               //color: Colors.red,
@@ -129,45 +132,49 @@ class _ComprasPageState extends State<ComprasPage> {
                         children: <Widget>[
                           InkWell(
                             //método para carregar nova Página. Adicionar no main a 'route'.
-                            onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => trocarLayout(
-                                  nome: produtos[index].nome, 
-                                  foto: produtos[index].imagePNG, 
-                                  descricao: produtos[index].descricao, 
-                                  preco: produtos[index].preco,
-                                  )));
-                              },
-                              borderRadius: BorderRadius.circular(20),
-                              child: Container(
-                                height: 200,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                  //color: Colors.green,
-                                  borderRadius: BorderRadius.circular(20),
-                                    image: DecorationImage(
-                                      image: AssetImage(produtos[index].imageURL),//carrega a foto de acordo com o 'index' da lista Produto.
-                                      fit: BoxFit.fill,
-                                      ),
-                                  ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => trocarLayout(
+                                            nome: produtos[index].nome,
+                                            foto: produtos[index].imagePNG,
+                                            descricao:
+                                                produtos[index].descricao,
+                                            preco: produtos[index].preco,
+                                          )));
+                            },
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              height: 200,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                //color: Colors.green,
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                  image: AssetImage(produtos[index]
+                                      .imageURL), //carrega a foto de acordo com o 'index' da lista Produto.
+                                  fit: BoxFit.fill,
                                 ),
+                              ),
                             ),
+                          ),
                           SizedBox(height: 10.0),
                           Text(
                             //Nome embaixo do Container acessa o 'index' da lista produtos.
                             produtos[index].nome,
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16.0,
-                                letterSpacing: 1.0,
-                                ),
+                            style: TextStyle(
+                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              letterSpacing: 1.0,
                             ),
+                          ),
                         ],
-                        ),
-                      );
-                  }
-                  ),
-              ),
+                      ),
+                    );
+                  }),
+            ),
 
             //Começo das 'MARCAS';
 
@@ -183,26 +190,26 @@ class _ComprasPageState extends State<ComprasPage> {
                       fontSize: 24.0,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.0,
-                      ),
                     ),
+                  ),
                   IconButton(
                     icon: Icon(
                       Icons.more_horiz,
-                      ),
+                    ),
                     iconSize: 30.0,
                     color: Colors.red,
-                    onPressed: (){},
-                    ),
+                    onPressed: () {},
+                  ),
                 ],
-                ),
               ),
+            ),
             Container(
               height: 250,
               //color: Colors.green,
               child: ListView.builder(
                   padding: EdgeInsets.only(left: 10.0),
                   scrollDirection: Axis.horizontal,
-                  itemCount: marcas.length,//Tamanho da lista;
+                  itemCount: marcas.length, //Tamanho da lista;
                   itemBuilder: (BuildContext context, int index) {
                     return Padding(
                       padding: EdgeInsets.all(10.0),
@@ -211,7 +218,9 @@ class _ComprasPageState extends State<ComprasPage> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(10),
                             child: InkWell(
-                              onTap: (){print('clickou em marcas');},
+                              onTap: () {
+                                print('clickou em marcas');
+                              },
                               borderRadius: BorderRadius.circular(10),
                               child: Container(
                                 margin: EdgeInsets.only(bottom: 6.0),
@@ -220,41 +229,41 @@ class _ComprasPageState extends State<ComprasPage> {
                                 decoration: BoxDecoration(
                                   //color: Colors.green,
                                   borderRadius: BorderRadius.circular(10),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey,
-                                        offset: Offset(0.0, 1.0),
-                                        blurRadius: 6.0,
-                                        ),
-                                    ],
-                                    image: DecorationImage(
-                                      image: AssetImage(marcas[index].imageURL),//carrega a foto de acordo com o 'index' da lista Produto.
-                                      fit: BoxFit.fill,
-                                      ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey,
+                                      offset: Offset(0.0, 1.0),
+                                      blurRadius: 6.0,
+                                    ),
+                                  ],
+                                  image: DecorationImage(
+                                    image: AssetImage(marcas[index]
+                                        .imageURL), //carrega a foto de acordo com o 'index' da lista Produto.
+                                    fit: BoxFit.fill,
                                   ),
                                 ),
                               ),
                             ),
+                          ),
                           SizedBox(height: 10.0),
                           Text(
                             //Nome embaixo do Container acessa o 'index' da lista produtos.
                             marcas[index].nome,
-                              style: TextStyle(
-                                color: Colors.blueGrey,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16.0,
-                                letterSpacing: 1.0,
-                                ),
+                            style: TextStyle(
+                              color: Colors.blueGrey,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              letterSpacing: 1.0,
                             ),
+                          ),
                         ],
-                        ),
-                      );
-                  }
-                  ),
-              ),
+                      ),
+                    );
+                  }),
+            ),
           ],
-          ),
         ),
+      ),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:teste/layout/layout_app.dart';
 import 'package:teste/layout/layout_color.dart';
-
 // VER PARÂMETROS CTRL + P e DOCUMENTATION CTRL + Q
 
 class NormalButton extends StatefulWidget {
@@ -129,9 +129,16 @@ class _CustomAppBar extends State<CustomAppBar> {
   }
 }
 
-class SeusPedidos extends StatelessWidget {
-  static String tag = 'seusPedidos';
+class SeusPedidosPage extends StatelessWidget {
+  static String tag = 'listPage';
+  @override
+  Widget build(BuildContext context) {
+    final content = SeusPedidos();
+    return Layout.getLayoutContent(context, content);
+  }
+}
 
+class SeusPedidos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -439,9 +446,16 @@ class _ListaPedidosState extends State<ListaPedidos> {
   }
 }
 
-class ListPage extends StatefulWidget {
+class Lista extends StatelessWidget {
   static String tag = 'listPage';
+  @override
+  Widget build(BuildContext context) {
+    final content = ListPage();
+    return Layout.getLayoutContent(context, content);
+  }
+}
 
+class ListPage extends StatefulWidget {
   @override
   _ListPageState createState() => _ListPageState();
 }

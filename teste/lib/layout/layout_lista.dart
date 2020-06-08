@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:teste/widgets/myWidgets.dart';
+import 'package:teste/widgets/my_widgets.dart';
 
 class ListaCompras extends StatelessWidget {
   static String tag = 'layoutLista';

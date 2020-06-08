@@ -1,55 +1,56 @@
 //import 'compras_widget.dart';
-import 'Produto.dart';
+import 'product.dart';
 
-final Produto frutas = Produto (
+final Produto frutas = Produto(
   id: 0,
   nome: 'Frutas',
   imageURL: 'assets/images/frutas.jpg',
 );
 
-final Produto comidas = Produto (
+final Produto comidas = Produto(
   id: 1,
   nome: 'Comidas',
   imageURL: 'assets/images/comidas.jpg',
 );
 
-final Produto bebidas = Produto (
+final Produto bebidas = Produto(
   id: 2,
   nome: 'Bebidas',
   imageURL: 'assets/images/bebidas.jpg',
 );
 
-final Produto limpeza = Produto (
+final Produto limpeza = Produto(
   id: 3,
   nome: 'Limpeza',
   imageURL: 'assets/images/limpeza.jpg',
 );
 
-final Produto pessoal = Produto (
+final Produto pessoal = Produto(
   id: 4,
   nome: 'Pessoais',
   imageURL: 'assets/images/pessoal.jpg',
 );
 
-final Produto infantil = Produto (
+final Produto infantil = Produto(
   id: 5,
   nome: 'Infantil',
   imageURL: 'assets/images/infantil.jpg',
 );
 
-final Produto congelados = Produto (
+final Produto congelados = Produto(
   id: 6,
   nome: 'Congelados',
   imageURL: 'assets/images/congelados.jpg',
 );
 
-final Produto banana = Produto (
+final Produto banana = Produto(
   id: 7,
   nome: 'Banana',
   imageURL: 'assets/images/banana.jpg',
   imagePNG: 'assets/images/bananaXD.png',
   preco: 3.43,
-  descricao: 'Banana é boa com whey bicho, agora tem que ser de baunilha, o resto é lixo',
+  descricao:
+      'Banana é boa com whey bicho, agora tem que ser de baunilha, o resto é lixo',
 );
 
 final Produto maca = Produto(
@@ -105,8 +106,25 @@ final Produto hellmans = Produto(
   imageURL: 'assets/images/hellmans.jpg',
 );
 
-
-
-List<Produto> categorias = [frutas, comidas, bebidas, limpeza, pessoal, infantil, congelados  ];
-List<Produto> produtos = [banana, maca, uva, pera, morango,  ];
-List<Produto> marcas = [nestle, bauducco, heinz, hellmans, ];
+List<Produto> categorias = [
+  frutas,
+  comidas,
+  bebidas,
+  limpeza,
+  pessoal,
+  infantil,
+  congelados
+];
+List<Produto> produtos = [
+  banana,
+  maca,
+  uva,
+  pera,
+  morango,
+];
+List<Produto> marcas = [
+  nestle,
+  bauducco,
+  heinz,
+  hellmans,
+];

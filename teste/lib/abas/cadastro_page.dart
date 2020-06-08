@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:teste/back/validate.dart';
+import 'package:teste/layout/layout_app.dart';
 import 'package:teste/layout/layout_color.dart';
 
-class CadastroPage extends StatefulWidget {
+class CadastroPage extends StatelessWidget {
   static String tag = 'cadastroPage';
-
   @override
-  _CadastroPageState createState() => _CadastroPageState();
+  Widget build(BuildContext context) {
+    final content = Cadastro();
+    return Layout.getLayoutContent(context, content);
+  }
 }
 
-class _CadastroPageState extends State<CadastroPage> {
+class Cadastro extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _CadastroState();
+  }
+}
+
+class _CadastroState extends State<Cadastro> {
   final validate = Validate();
 
   _textField(

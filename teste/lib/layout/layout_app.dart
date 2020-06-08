@@ -1,11 +1,14 @@
+/** No layout há o bottomNavigatonBar e appBar
+ * 
+ */
 import 'package:flutter/material.dart';
-import 'package:teste/abas/abaMais.dart';
-import 'package:teste/abas/compras_widget.dart';
+import 'package:teste/abas/compras_page.dart';
 import 'package:teste/abas/home_page.dart';
-import 'package:teste/back/cadastro.dart';
+import 'package:teste/abas/mais_page.dart';
+import 'package:teste/abas/cadastro_page.dart';
 import 'package:teste/layout/layout_color.dart';
 
-class LayoutTeste {
+class Layout {
   static String logo =
       'assets/images/LogoOBaratao.png'; //Trocar logo do mercadinho.
 
@@ -15,10 +18,12 @@ class LayoutTeste {
     HomePage.tag,
     CadastroPage.tag,
     ComprasPage.tag,
-    Mais.tag
+    MaisPage.tag
   ];
 
-  static Scaffold getLayoutTesteContent(BuildContext context, content) {
+  static Scaffold getLayoutContent(BuildContext context, content,
+      {leading, flexibleSpace, bottom}) {
+    /// EDIÇÃO DO BOTTOM NAVIGATOR BAR
     BottomNavigationBar homeBottomNavigationBar = BottomNavigationBar(
       currentIndex: currentIndex, //Indice da 'aba' selecionada
       iconSize: 24.0,
@@ -64,6 +69,7 @@ class LayoutTeste {
       },
     );
 
+    /// LOGO
     Widget _logo = Container(
       height: 50,
       alignment: Alignment.center,
@@ -72,6 +78,7 @@ class LayoutTeste {
       ),
     );
 
+    ///
     _gestureDetector({onTap, Widget child}) {
       return GestureDetector(
         onTap: onTap,
@@ -85,16 +92,19 @@ class LayoutTeste {
       return items;
     }
 
+    /// LAYOUT
     return Scaffold(
       resizeToAvoidBottomInset: false, //Arruma o erro de overflow do teclado;
       appBar: AppBar(
         title: _logo,
         actions: _getHomeAction(context),
+        leading: leading,
+        flexibleSpace: flexibleSpace,
+        bottom: bottom,
       ),
-      body: SafeArea(
-        child: content,
-      ),
+      body: content,
       bottomNavigationBar: homeBottomNavigationBar,
+      primary: true,
     );
   }
 }

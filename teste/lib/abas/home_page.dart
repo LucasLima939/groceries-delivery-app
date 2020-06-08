@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:teste/layout/layoutApp.dart';
-import 'package:teste/widgets/amantesDaCozinha.dart';
+import 'package:teste/layout/layout_app.dart';
+import 'package:teste/widgets/amantes_da_cozinha.dart';
 import 'package:teste/widgets/bebidas.dart';
-import 'package:teste/widgets/frutasEVegetais.dart';
-import 'package:teste/widgets/agua.dart';
+import 'package:teste/widgets/frutas_vegetais.dart';
+import 'package:teste/widgets/agua_gas.dart';
 import 'package:teste/widgets/bolos_paes_sopas.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final content = Home();
 
-    return LayoutTeste.getLayoutTesteContent(context, content);
+    return Layout.getLayoutContent(context, content);
   }
 }
 
@@ -107,6 +107,10 @@ class _HomeState extends State<Home> {
           //COMEÇO DOS BANNERS DA HOME.
 
           SizedBox(height: 25), //Espaço entre o 'carousel' e o 'banner'.
+          AguaContainer(),
+          SizedBox(
+            height: 40,
+          ),
           FrutasEVegetais(),
           SizedBox(
             height: 40,
@@ -116,10 +120,6 @@ class _HomeState extends State<Home> {
             height: 40,
           ),
           Bebidas(),
-          SizedBox(
-            height: 40,
-          ),
-          AguaContainer(),
           SizedBox(
             height: 40,
           ),

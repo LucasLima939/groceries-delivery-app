@@ -1,8 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:teste/abas/abaMais.dart';
-import 'package:teste/abas/compras_widget.dart';
-import 'package:teste/back/cadastro.dart';
-import 'package:teste/layout/layout_color.dart';
 /*
 void main() => runApp(AppTeste());
 

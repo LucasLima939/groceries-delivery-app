@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:teste/layout/layout_color.dart';
-import 'package:teste/widgets/ContadorProduto.dart';
+import 'package:teste/widgets/contador_produto.dart';
 
 class PaginaCompra extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _PaginaCompraState extends State<PaginaCompra> {
         decoration: BoxDecoration(
             image: DecorationImage(
           image: AssetImage(
-              'assets/images/mercadinhoTudoDeBom.png'), //Trocar logo do mercadinho.
+              'assets/images/LogoOBaratao.png'), //Trocar logo do mercadinho.
           fit: BoxFit.cover,
         )),
       );

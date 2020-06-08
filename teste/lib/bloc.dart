@@ -1,18 +1,18 @@
 import 'dart:async';
 import 'package:rxdart/rxdart.dart';
-import 'package:teste/carrinhoFinalizarCompras/listRepository.dart';
+import 'package:teste/carrinho_compras/list_repository.dart';
 
 /** Este é o INICIO do nosso padrão de projeto Bloc
  *
  * O Bloc Pattern é importante para otimizarmos nossas aplicações, construindo um back-end mais rápido e dinâmico
  */
 class Bloc {
-
   /// CONSTRUTOR PADRÃO
 
-  BehaviorSubject<String> _controller = BehaviorSubject<String>.seeded("texto inicial");
+  BehaviorSubject<String> _controller =
+      BehaviorSubject<String>.seeded("texto inicial");
   // para o bloc é necessário o get;
-  Stream<int> get output0 => _controller.stream.map((data)=> data.length);
+  Stream<int> get output0 => _controller.stream.map((data) => data.length);
   Stream<String> get output01 => _controller.stream;
   Sink<String> get input0 => _controller.sink;
 
@@ -24,9 +24,11 @@ class Bloc {
 
   ListRepository _listRepository = ListRepository();
 
-  final listFilter$ = BehaviorSubject<String>(); // o $ no final indica que é controlador de fluxo que recebe uma String p filtrar
+  final listFilter$ = BehaviorSubject<
+      String>(); // o $ no final indica que é controlador de fluxo que recebe uma String p filtrar
   Sink<String> get input => listFilter$.sink;
-  Stream<List<String>> get output => listFilter$.stream.map(_listRepository.filter);
+  Stream<List<String>> get output =>
+      listFilter$.stream.map(_listRepository.filter);
 }
 /** FIM do Bloc
  *  Abaixo temos uma breve explicação das funcionalidades do StreamController e seus variantes. Run "bloc.dart"
