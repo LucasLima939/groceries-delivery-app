@@ -5,7 +5,7 @@ part 'controller.g.dart';
 
 class Controller = ControllerBase with _$Controller;
 
-abstract class ControllerBase with Store{
+abstract class ControllerBase with Store {
   @observable
   String nome = '';
 
@@ -20,8 +20,8 @@ abstract class ControllerBase with Store{
     nome = newName;
   }
 
-    @action
-    mudarSobrenome(String newName) {
-      sobrenome = newName;
+  @action
+  mudarSobrenome(String newName) {
+    sobrenome = newName;
   }
 }

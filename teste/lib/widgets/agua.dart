@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class FrutasEVegetais extends StatefulWidget {
+class AguaContainer extends StatefulWidget {
   @override
-  _FrutasEVegetaisState createState() => _FrutasEVegetaisState();
+  _AguaContainerState createState() => _AguaContainerState();
 }
 
-class _FrutasEVegetaisState extends State<FrutasEVegetais> {
+class _AguaContainerState extends State<AguaContainer> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -21,7 +21,7 @@ class _FrutasEVegetaisState extends State<FrutasEVegetais> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
                 image: DecorationImage(
-                  image: AssetImage('assets/images/frutas_vegetais.jpg'),
+                  image: AssetImage('assets/images/botijao_agua.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -53,18 +53,18 @@ class _FrutasEVegetaisState extends State<FrutasEVegetais> {
           ),
         ),
         Positioned(
-            left: 38,
-            top: 350,
-            child: Text(
-              '''FRUTAS E VEGETAIS 
-FRESCOS''',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 29,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 3.0),
-            )),
+          left: 38,
+          top: 350,
+          child: Text(
+            '''ÁGUA''',
+            textAlign: TextAlign.left,
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 29,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 3.0),
+          ),
+        ),
       ],
     );
   }

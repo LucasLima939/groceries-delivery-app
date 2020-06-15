@@ -10,7 +10,7 @@ import 'package:teste/layout/layout_color.dart';
 
 class Layout {
   static String logo =
-      'assets/images/LogoOBaratao.png'; //Trocar logo do mercadinho.
+      'assets/logo/logo_baratao.png'; //Trocar logo do mercadinho.
 
   static int currentIndex = 0; //Muda de acordo com a 'aba' selecionada;
   static final abas = [

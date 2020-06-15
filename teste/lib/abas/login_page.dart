@@ -1,21 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:teste/api/api_response.dart';
+import 'package:teste/api/login_api.dart';
+import 'package:teste/layout/layout_app.dart';
+import 'package:teste/layout/layout_color.dart';
+import 'package:teste/models/user.dart';
+import 'package:teste/utils/alert.dart';
+import 'package:teste/utils/nav.dart';
+import 'package:teste/widgets/button_login.dart';
+import 'ofertas_page.dart';
 
-import 'home_page.dart';
-import 'login_api.dart';
-import 'nav.dart';
+/** Esta classe padrão de login foi testada com a URL presente no "api_login"
+ *  Ao ser alterada, deve continuar funcional de acordo com a URL
+ *  Ao trocar a URL da API de referência, refazer testes de varificação de usuário
+ *  Esta classe conversa com 4 outras classes para realizar o validação, construção do usuário
+ *  resposta da requisição json, navegação de página e tratamento de erros:
+ *  "login_api", "user.dart", "api_response", "nav.dart",  "alert.dart"
+ *  em ordem. 
+ */
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
+  static String tag = 'loginPage';
   @override
-  _LoginPageState createState() => _LoginPageState();
+  Widget build(BuildContext context) {
+    final content = Login();
+    return Layout.getLayoutContent(context, content);
+  }
 }
 
-class _LoginPageState extends State<LoginPage> {
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
-  final _tLogin = TextEditingController();
+
+  final _tEmail = TextEditingController();
 
   final _tSenha = TextEditingController();
 
   final _focusSenha = FocusNode();
+
+  bool _showProgress = false;
 
   @override
   void initState() {
@@ -25,15 +51,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Carros"),
-      ),
-      body: _body(),
-    );
-  }
-
-  _body() {
     return Form(
       key: _formKey,
       child: Container(
@@ -41,10 +58,10 @@ class _LoginPageState extends State<LoginPage> {
         child: ListView(
           children: <Widget>[
             _textFormField(
-              "Login",
-              "Digite o login",
-              controller: _tLogin,
-              validator: _validateLogin,
+              "Email",
+              "Digite o email",
+              controller: _tEmail,
+              validator: _validateEmail,
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               nextFocus: _focusSenha,
@@ -61,7 +78,8 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 10,
             ),
-            _button("login", _onClickLogin),
+            LoginButton("login",
+                onPressed: _onClickLogin, showProgress: _showProgress),
           ],
         ),
       ),
@@ -93,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
       },
       style: TextStyle(
         fontSize: 25,
-        color: Colors.blue,
+        color: LayoutColor.primaryColor,
       ),
       decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -102,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
           labelText: label,
           labelStyle: TextStyle(
             fontSize: 25,
-            color: Colors.grey,
+            color: LayoutColor.primaryColor,
           ),
           hintText: hint,
           hintStyle: TextStyle(
@@ -111,42 +129,39 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Container _button(String text, Function onPressed) {
-    return Container(
-      height: 46,
-      child: RaisedButton(
-        color: Colors.blue,
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-          ),
-        ),
-        onPressed: onPressed,
-      ),
-    );
-  }
-
   Future<void> _onClickLogin() async {
     if (!_formKey.currentState.validate()) {
       return;
     }
-    String login = _tLogin.text;
+    String login = _tEmail.text;
     String senha = _tSenha.text;
 
     print("Login: $login, Senha: $senha");
 
-    bool ok = await LoginApi.login(login, senha);
+    setState(() {
+      _showProgress = true;
+    });
 
-    if (ok) {
-      push(context, HomePage());
+    ApiResponse response = await LoginApi.login(login, senha);
+
+    if (response.ok) {
+      Usuario user = response.result;
+
+      print(">>> $user");
+
+      push(context, OfertasPage(), replace: false);
+    } else {
+      alert(context, response.msg);
     }
+
+    setState(() {
+      _showProgress = false;
+    });
   }
 
-  String _validateLogin(String text) {
+  String _validateEmail(String text) {
     if (text.isEmpty) {
-      return "Digite o login";
+      return "Digite o email";
     }
     return null;
   }

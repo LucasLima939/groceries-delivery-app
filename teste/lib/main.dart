@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:teste/widgets/my_widgets.dart';
 import 'package:teste/abas/compras_page.dart';
 import 'abas/home_page.dart';
+import 'abas/login_page.dart';
 import 'abas/mais_page.dart';
 import 'abas/reset_password_page.dart';
 import 'abas/cadastro_page.dart';
@@ -23,6 +24,7 @@ class AppMarket extends StatelessWidget {
     SeusPedidosPage.tag: (BuildContext context) => SeusPedidosPage(),
     Lista.tag: (BuildContext context) => Lista(),
     CadastroPage.tag: (BuildContext context) => CadastroPage(),
+    LoginPage.tag: (BuildContext context) => LoginPage(),
     ComprasPage.tag: (BuildContext context) => ComprasPage(),
     ResetPasswordPage.tag: (BuildContext context) => ResetPasswordPage(),
     LayoutCarrinho.tag: (BuildContext context) => LayoutCarrinho(),

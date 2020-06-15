@@ -55,9 +55,9 @@ final Produto banana = Produto(
 
 final Produto maca = Produto(
   id: 8,
-  nome: 'Maça',
-  imageURL: 'assets/images/maça.jpg',
-  imagePNG: 'assets/images/maçaPNG.png',
+  nome: 'Maçã',
+  imageURL: 'assets/images/maca.jpg',
+  imagePNG: 'assets/images/macaPNG.png',
   preco: 3.43,
   descricao: 'Maça verde é bom pakas, mas essa aqui é vermelha mesmo porra',
 );

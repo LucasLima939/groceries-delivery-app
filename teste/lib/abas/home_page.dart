@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:teste/layout/layout_app.dart';
+import 'package:teste/widgets/agua.dart';
 import 'package:teste/widgets/amantes_da_cozinha.dart';
 import 'package:teste/widgets/bebidas.dart';
 import 'package:teste/widgets/frutas_vegetais.dart';
-import 'package:teste/widgets/agua_gas.dart';
 import 'package:teste/widgets/bolos_paes_sopas.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:teste/widgets/gas.dart';
 
 class HomePage extends StatelessWidget {
   static String tag = 'home-page';
@@ -31,9 +32,9 @@ class _HomeState extends State<Home> {
 
   final photos = [
     //imagens dos banners da home;
-    'assets/images/banner1.jpg',
-    'assets/images/banner2.jpg',
-    'assets/images/banner3.jpg',
+    'assets/banners/bannerBaratao1.jpg',
+    'assets/banners/bannerBaratao2.jpg',
+    'assets/banners/bannerBaratao3.jpg',
   ];
 
   @override
@@ -108,6 +109,10 @@ class _HomeState extends State<Home> {
 
           SizedBox(height: 25), //Espaço entre o 'carousel' e o 'banner'.
           AguaContainer(),
+          SizedBox(
+            height: 40,
+          ),
+          GasContainer(),
           SizedBox(
             height: 40,
           ),

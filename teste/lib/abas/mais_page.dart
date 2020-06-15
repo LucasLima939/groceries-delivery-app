@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:teste/layout/layout_app.dart';
 import 'package:teste/layout/layout_color.dart';
 import 'package:teste/layout/layout_lista.dart';
+import 'package:teste/utils/nav.dart';
 import 'package:teste/widgets/my_widgets.dart';
+
+import 'login_page.dart';
 
 class MaisPage extends StatelessWidget {
   static String tag = 'mais-page';
@@ -276,6 +279,7 @@ class _Mais extends State<Mais> {
           iconToSet: Icons.exit_to_app,
           iconColor: LayoutColor.primaryColor,
           buttonText: 'Sair da Conta',
+          nextPage: _onClickLogout(context),
         ), // Botão "Sair da Conta"
         //versão do APP
         //appbar
@@ -293,5 +297,10 @@ class _Mais extends State<Mais> {
     setState(() {
       toggleTwoValue = !toggleTwoValue;
     });
+  }
+
+  _onClickLogout(BuildContext context) {
+    Navigator.pop(context);
+    push(context, LoginPage(), replace: true);
   }
 }

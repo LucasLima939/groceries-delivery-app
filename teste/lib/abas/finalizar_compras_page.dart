@@ -21,7 +21,7 @@ class _PaginaCompraState extends State<PaginaCompra> {
         decoration: BoxDecoration(
             image: DecorationImage(
           image: AssetImage(
-              'assets/images/LogoOBaratao.png'), //Trocar logo do mercadinho.
+              'assets/logo/logo_baratao.png'), //Trocar logo do mercadinho.
           fit: BoxFit.cover,
         )),
       );

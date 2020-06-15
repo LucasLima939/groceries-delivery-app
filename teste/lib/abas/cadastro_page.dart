@@ -52,7 +52,7 @@ class _CadastroState extends State<Cadastro> {
                 borderRadius: BorderRadius.circular(20.0),
                 image: DecorationImage(
                   image:
-                      AssetImage('assets/images/iconeOfertas1.png'), //trocar ;(
+                      AssetImage('assets/icons/iconeOfertas1.png'), //trocar ;(
                   fit: BoxFit.scaleDown,
                 ),
               ),
@@ -180,11 +180,25 @@ class _CadastroState extends State<Cadastro> {
               alignment: Alignment.center,
               child: FlatButton(
                 child: Text(
+                  'Já sou cadastrado',
+                  textAlign: TextAlign.center,
+                ),
+                onPressed: () => Navigator.of(context).pushNamed('loginPage'),
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Container(
+              height: 40.0,
+              alignment: Alignment.center,
+              child: FlatButton(
+                child: Text(
                   'Esqueci a senha',
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () =>
-                    Navigator.of(context).pushNamed('esqueciSenha'),
+                    Navigator.of(context).pushNamed('resetPasswordPage'),
               ),
             ),
           ],
