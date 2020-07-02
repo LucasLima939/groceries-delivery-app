@@ -4,18 +4,18 @@ import 'package:teste/abas/home_page.dart';
 import 'package:teste/abas/login_page.dart';
 import 'package:teste/abas/mais_page.dart';
 
-import 'app_bar.dart';
-import 'bottom_navigator_bar.dart';
+import 'app_bar_teste.dart';
+import 'bottom_bar.dart';
 
-class Layout extends StatefulWidget {
+class LayoutTeste extends StatefulWidget {
   final Widget body;
 
-  Layout({Key key, @required this.body}) : super(key: key);
+  LayoutTeste({Key key, @required this.body}) : super(key: key);
 
-  _LayoutState createState() => _LayoutState();
+  _LayoutTesteState createState() => _LayoutTesteState();
 }
 
-class _LayoutState extends State<Layout> {
+class _LayoutTesteState extends State<LayoutTeste> {
   static String logo =
       'assets/logo/logo_baratao.png'; //Trocar logo do mercadinho.
   int currentIndex = 0;
@@ -29,7 +29,7 @@ class _LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CusAppBar(
+      appBar: AppBarTeste(
         title: Container(
           height: 50,
           alignment: Alignment.center,
@@ -40,7 +40,7 @@ class _LayoutState extends State<Layout> {
         ),
       ),
       body: widget.body,
-      bottomNavigationBar: CusBottomNavigatorBar(
+      bottomNavigationBar: BottomBar(
         currentIndex: currentIndex,
         onTap: (int i) {
           currentIndex = i;

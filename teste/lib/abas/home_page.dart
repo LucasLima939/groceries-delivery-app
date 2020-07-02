@@ -12,9 +12,7 @@ class HomePage extends StatelessWidget {
   static String tag = 'home-page';
   @override
   Widget build(BuildContext context) {
-    final content = Home();
-
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: Home());
   }
 }
 

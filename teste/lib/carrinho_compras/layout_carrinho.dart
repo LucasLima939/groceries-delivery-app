@@ -7,8 +7,7 @@ class LayoutCarrinhoPage extends StatelessWidget {
   static String tag = 'layoutCarrinho';
   @override
   Widget build(BuildContext context) {
-    final content = LayoutCarrinho();
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: LayoutCarrinho());
   }
 }
 

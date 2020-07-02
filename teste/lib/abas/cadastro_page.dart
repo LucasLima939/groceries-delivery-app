@@ -3,13 +3,15 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:teste/back/validate.dart';
 import 'package:teste/layout/layout_app.dart';
 import 'package:teste/layout/layout_color.dart';
+import 'package:teste/utils/nav.dart';
+
+import 'confirm_account.dart';
 
 class CadastroPage extends StatelessWidget {
   static String tag = 'cadastroPage';
   @override
   Widget build(BuildContext context) {
-    final content = Cadastro();
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: Cadastro());
   }
 }
 
@@ -66,8 +68,8 @@ class _CadastroState extends State<Cadastro> {
                     end: Alignment.bottomRight,
                     stops: [0.3, 1.0],
                     colors: [
-                      LayoutColor.primaryColor, // COR
-                      LayoutColor.primaryColor[600] // COR
+                      LayoutColor.primaryColor, // COR SÓLIDA
+                      LayoutColor.primaryColor[600] // COR TOM CLARO
                     ],
                   ),
                   border: Border.all(
@@ -155,7 +157,9 @@ class _CadastroState extends State<Cadastro> {
                 child: Observer(
                   builder: (_) {
                     return FlatButton(
-                      onPressed: () {},
+                      onPressed: () => validate.isValid
+                          ? push(context, ConfirmAccount())
+                          : NullThrownError(),
                       child: Center(
                         child: Text(
                           "Cadastrar",

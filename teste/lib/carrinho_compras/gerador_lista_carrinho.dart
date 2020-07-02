@@ -6,8 +6,7 @@ class GeradorListaCarrinhoPage extends StatelessWidget {
   static String tag = 'geradorListaCarrinho';
   @override
   Widget build(BuildContext context) {
-    final content = GeradorListaCarrinho();
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: GeradorListaCarrinho());
   }
 }
 

@@ -3,11 +3,12 @@ import 'package:teste/api/api_response.dart';
 import 'package:teste/api/login_api.dart';
 import 'package:teste/layout/layout_app.dart';
 import 'package:teste/layout/layout_color.dart';
-import 'package:teste/models/user.dart';
+import 'package:teste/models/usuario.dart';
 import 'package:teste/utils/alert.dart';
 import 'package:teste/utils/nav.dart';
 import 'package:teste/widgets/button_login.dart';
-import 'ofertas_page.dart';
+import 'cadastro_page.dart';
+import 'home_page.dart';
 
 /** Esta classe padrão de login foi testada com a URL presente no "api_login"
  *  Ao ser alterada, deve continuar funcional de acordo com a URL
@@ -19,11 +20,10 @@ import 'ofertas_page.dart';
  */
 
 class LoginPage extends StatelessWidget {
-  static String tag = 'loginPage';
+  static String tag = 'login-page';
   @override
   Widget build(BuildContext context) {
-    final content = Login();
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: Login());
   }
 }
 
@@ -35,7 +35,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
 
-  final _tEmail = TextEditingController();
+  final _tUser = TextEditingController();
 
   final _tSenha = TextEditingController();
 
@@ -47,6 +47,13 @@ class _LoginState extends State<Login> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    Future<Usuario> future = Usuario.get();
+    future.then((Usuario user) {
+      if (user != null) {
+        push(context, HomePage(), replace: true);
+      }
+    });
   }
 
   @override
@@ -60,8 +67,8 @@ class _LoginState extends State<Login> {
             _textFormField(
               "Email",
               "Digite o email",
-              controller: _tEmail,
-              validator: _validateEmail,
+              controller: _tUser,
+              validator: _validateUser,
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               nextFocus: _focusSenha,
@@ -80,6 +87,14 @@ class _LoginState extends State<Login> {
             ),
             LoginButton("login",
                 onPressed: _onClickLogin, showProgress: _showProgress),
+            FlatButton(
+                child: Text("Ainda não possuo conta"),
+                onPressed: () {
+                  push(
+                    context,
+                    CadastroPage(),
+                  );
+                }),
           ],
         ),
       ),
@@ -133,7 +148,7 @@ class _LoginState extends State<Login> {
     if (!_formKey.currentState.validate()) {
       return;
     }
-    String login = _tEmail.text;
+    String login = _tUser.text;
     String senha = _tSenha.text;
 
     print("Login: $login, Senha: $senha");
@@ -149,7 +164,7 @@ class _LoginState extends State<Login> {
 
       print(">>> $user");
 
-      push(context, OfertasPage(), replace: false);
+      push(context, HomePage(), replace: true);
     } else {
       alert(context, response.msg);
     }
@@ -159,9 +174,9 @@ class _LoginState extends State<Login> {
     });
   }
 
-  String _validateEmail(String text) {
+  String _validateUser(String text) {
     if (text.isEmpty) {
-      return "Digite o email";
+      return "Digite o login";
     }
     return null;
   }

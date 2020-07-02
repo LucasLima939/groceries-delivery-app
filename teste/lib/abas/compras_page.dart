@@ -7,8 +7,7 @@ class ComprasPage extends StatelessWidget {
   static String tag = 'compras-page';
   @override
   Widget build(BuildContext context) {
-    final content = Compras();
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: Compras());
   }
 }
 

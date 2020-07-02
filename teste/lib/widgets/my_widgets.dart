@@ -133,8 +133,7 @@ class SeusPedidosPage extends StatelessWidget {
   static String tag = 'listPage';
   @override
   Widget build(BuildContext context) {
-    final content = SeusPedidos();
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: SeusPedidos());
   }
 }
 
@@ -450,8 +449,7 @@ class Lista extends StatelessWidget {
   static String tag = 'listPage';
   @override
   Widget build(BuildContext context) {
-    final content = ListPage();
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: ListPage());
   }
 }
 

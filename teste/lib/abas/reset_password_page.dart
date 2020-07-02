@@ -6,8 +6,7 @@ class ResetPasswordPage extends StatelessWidget {
   static String tag = 'resetPasswordPage';
   @override
   Widget build(BuildContext context) {
-    final content = ResetPassword();
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: ResetPassword());
   }
 }
 

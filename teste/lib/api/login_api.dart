@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:teste/models/user.dart';
+import 'package:teste/models/usuario.dart';
 import 'api_response.dart';
 
 /** Esta é uma classe de tratamento de login
@@ -21,6 +21,8 @@ class LoginApi {
       String s =
           json.encode(params); // converte de json para string e pode ser lido
 
+      print(">> $s");
+
       var response = await http.post(
         url,
         body: s,
@@ -36,6 +38,8 @@ class LoginApi {
 
       if (response.statusCode == 200) {
         final user = Usuario.fromJson(mapResponse);
+
+        user.save(); // método que guarda as preferências da aplicação
 
         return ApiResponse.ok(user);
       }

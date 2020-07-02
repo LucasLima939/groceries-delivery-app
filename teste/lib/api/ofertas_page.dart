@@ -8,9 +8,7 @@ class OfertasPage extends StatelessWidget {
   static String tag = 'ofertas-page';
   @override
   Widget build(BuildContext context) {
-    final content = Ofertas();
-
-    return Layout.getLayoutContent(context, content);
+    return Layout(body: Ofertas());
   }
 }
 
