@@ -1,9 +1,2 @@
 {
-    "[dart]": {
-        
-    },
-    "files.exclude": {
-        "**/*.g.dart": true
-    }
-    
 }
