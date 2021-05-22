@@ -1,4 +1,4 @@
-# Buy-DeliveryMarketApp
+# Groceries Delivery App
 # english
 This is a team project written in Dart and developed in Flutter framework to replace the delivery's phone calls to local grocery stores.
 This is an complete shop app with all funcionalities expected for this kind of application: You can see the offers avaliable, all itens avaliables in shelf, easily put them to your cart, finish with the payment and select your address to delivery.
